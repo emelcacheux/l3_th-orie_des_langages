@@ -1,0 +1,29 @@
+LDFLAGS="-L/usr/local/opt/flex/lib"
+
+run: main.py
+	python3 main.py
+	
+main.py: regexp test.1
+	./regexp < test.1
+	
+regexp: regexp.yy.c regexp.tab.c
+	gcc -o $@ $^ -ly -ll
+
+regexp.tab.c: regexp.y
+	bison -d -v -g $^
+# -d pour générer le fichier regexp.tab.h
+# -v pour générer le fichier regexp.output
+# -g pour générer le fichier regexp.vcg
+
+regexp.yy.c: regexp.l
+	flex -o $@ $^
+
+clean:
+	#Les fichiers générés par bison
+	rm -f regexp.output regexp.tab.c regexp.tab.h regexp.gv  
+	# Les fichiers générés par flex
+	rm -f regexp.yy.c
+	#L'exécutable 
+	rm -f regexp
+	#Le fichier généré par notre script
+	rm -f main.py

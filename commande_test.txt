@@ -1,0 +1,22 @@
+// Etape 3 : Tester votre fichier lex sur différents exemples
+
+// pour reconnaitre (a+*).bc
+
+$lex regexp.l
+$gcc lex.yy.c -lfl -o regexp
+$ ./regexp (a+*).bc
+(a+*).bc
+
+// pour reconnaitre a+*
+
+$lex regexp.l
+$gcc lex.yy.c -lfl -o regexp
+$ ./regexp b.ca+
+b.ca+
+
+// pour reconnaitre abc+*.()E
+
+$lex regexp.l
+$gcc lex.yy.c -lfl -o regexp
+$ ./regexp abc +*.()E
+abc +*.()E

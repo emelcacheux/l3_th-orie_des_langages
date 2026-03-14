@@ -1,0 +1,21 @@
+/*Les e.r.*/
+
+lettres [a b c]
+epsilon [E]
+operateur [* . +]
+
+/*Tokens pour les parenthèses*/
+
+#define PAR_O 101 // '(' parenthèse ouvrante 
+#define PAR_F 102 // ')' parenthèse fermante
+
+/*Tokens pour les opér&ateurs*/
+
+#define PLUS 201 // '+'
+#define ETOILE 202 //'*'
+#define POINT 203 // '.'
+
+/*Tokens pour les symboles*/
+
+#define VARIABLE 301 // '[a b c]'
+#define EPSILON 302 // 'E'
