@@ -1,3 +1,4 @@
+Ce projet a été effectué au cours de mon cursus de Licence en groupe avec plusieurs camarades. Je poste sur ce répositoire la version qui a été rendue afin de montrer mon travail et mes compétences.  
 
 # Projet – Égalité d’expressions régulières
 Version du 14 novembre 2025
